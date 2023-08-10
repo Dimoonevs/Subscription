@@ -1,0 +1,33 @@
+.select_text{
+    color: black;
+}
+.select{
+    box-shadow: none;
+    max-width: 250px;
+}
+table{
+    border-radius: 14%;
+}
+.table{
+    margin-top: 50px;
+}
+table thead th{
+    background: var(--accent, #333333);
+}
+table tbody td{
+    background: var(--accent, #FFFFFF);
+}
+.table th{
+    padding: 25px;
+    max-width: 25px;
+}
+.table td{
+    padding: 25px;
+}
+.wrapper {
+    min-height: 75vh;
+}
+.text_color{
+    color: #333333;
+}
+

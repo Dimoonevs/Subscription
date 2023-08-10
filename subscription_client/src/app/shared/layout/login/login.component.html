@@ -1,0 +1,37 @@
+
+
+<div class="wrapper">
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <form [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+          <div class="formbold-input-flex">
+            <div class="form_input">
+                <input
+                type="text"
+                name="login"
+                id="firstname"
+                class="text"
+                formControlName="Login"
+                />
+                <label for="firstname" class="text formbold-form-label"> Логін </label>
+            </div>
+            <div class="form_input">
+                <input
+                type="password"
+                name="password"
+                id="lastname"
+                class="text"
+                formControlName="Password"
+                />
+                <label for="lastname" class="text formbold-form-label"> Пароль </label>
+            </div>
+          </div>
+  
+          <button type="submit" class="formbold-btn text">
+              Увійти
+          </button>
+      </form>
+    </div>
+  </div>
+</div>

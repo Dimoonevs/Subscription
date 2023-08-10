@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <select #mySelect class="form-select form-select-sm text select_text select" aria-label=".form-select-sm example" (change)="handleSelection()">
+        <option class="text select_text" value="1">Молодша</option>
+        <option class="text select_text" value="2">Середня</option>
+        <option class="text select_text" value="3">Старша</option>
+    </select> 
+    <table class="table table-dark text">
+        <thead>
+          <tr>
+            <th scope="col">Прізвище</th>
+            <th scope="col">Ім'я</th>
+            <th scope="col">Кількість тренувань</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sportsmen of sportsmens.data">
+            <td class="text_color">{{sportsmen.lastName}}</td>
+            <td class="text_color">{{sportsmen.name}}</td>
+            <td class="text_color">{{sportsmen.numberWorkouts}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

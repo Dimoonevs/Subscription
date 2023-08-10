@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container_top">
+    <select #mySelect class="form-select form-select-sm text select_text select" aria-label=".form-select-sm example" (change)="handleSelection()">
+      <option class="text select_text" value="1">Молодша</option>
+      <option class="text select_text" value="2">Середня</option>
+      <option class="text select_text" value="3">Старша</option>
+    </select> 
+    <button class="text button_add" (click)="routeToAddForm()">Додати нового спортсмена</button>
+  </div>
+    <table class="table table-dark text">
+        <thead>
+          <tr>
+            <th scope="col">Прізвище</th>
+            <th scope="col">Ім'я</th>
+            <th scope="col">Кількість тренувань</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sportsmen of sportsmens.data">
+            <td class="text_color">{{sportsmen.lastName}}</td>
+            <td class="text_color">{{sportsmen.name}}</td>
+            <td class="text_color" class="flex_add"><div class="text_color">{{sportsmen.numberWorkouts}}</div>  <div class="icon_edit" (click)="openEdit(sportsmen.id)"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 42H43" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 26.7199V34H18.3172L39 13.3081L31.6951 6L11 26.7199Z" fill="none" stroke="#333333" stroke-width="4" stroke-linejoin="round"/></svg></div></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<!-- <div class="poup_wrapper">
+    <div class="popup">
+        <form [formGroup]="formUpdate" (ngSubmit)="closeEditAndSubmit()">
+            <div class="text_title top_text">Редактирование</div>
+            <div class="popup_inpu text"><label for="">Ім'я</label><input type="name"  formControlName="nameUpdate"></div>
+            <div class="popup_inpu text"><label for="">Прізвище</label><input type="name"  formControlName="lastNameUpdate"></div>
+            <div class="popup_inpu text"><label for="">Кількість тренувань</label><input type="name"  formControlName="numberOfWorkoutUpdate"></div>
+            <button type="submit" class="text">Сохранить</button>
+        </form>
+    </div>
+</div> -->

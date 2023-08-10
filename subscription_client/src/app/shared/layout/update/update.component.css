@@ -1,0 +1,27 @@
+.update_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top_text{
+    text-align: center;
+    margin-bottom: 24px;
+}
+.popup_inpu{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+button{
+    width: 100%;
+    margin-top: 12px;
+}
+.select_text{
+    color: black;
+}
+.select{
+    box-shadow: none;
+    background: rgba(230, 235, 241, 0.50);
+    border: 1px solid rgba(230, 235, 241, 0.66);
+}

@@ -1,0 +1,25 @@
+.navbar-collapse{
+    flex-grow: unset;
+}
+header{
+    padding: 15px;
+    background: var(--bgc, #FFFFFF);
+}
+header  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_link ul{
+    display: flex;
+    align-items: center;
+}
+.nav_link ul li{
+    margin: 0 15px;
+}
+footer{
+    background: #003366;
+}
+footer .text{
+    color: #ECECED;
+}

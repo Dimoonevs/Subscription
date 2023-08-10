@@ -1,0 +1,20 @@
+<div class="update_container">
+    <div class="wrapper">
+        <form [formGroup]="formAdd" (ngSubmit)="submit()">
+            <div class="text_title top_text">Додати спортсмена</div>
+            <div class="popup_inpu text"><label for="">Ім'я</label><input type="name"  formControlName="nameAdd"></div>
+            <div class="popup_inpu text"><label for="">Прізвище</label><input type="name"  formControlName="lastNameAdd"></div>
+            <div class="popup_inpu text"><label for="">Кількість тренувань</label><input type="name"  formControlName="numberOfWorkoutAdd" [(ngModel)]="number"></div>
+            <div class="popup_inpu text">
+                <label for="">Обрати группу!!</label>
+                <select #mySelect class="form-select form-select-sm text select_text select" aria-label=".form-select-sm example" [(ngModel)]="group">
+                    <option class="text select_text" value="0" [selected]="group === 'LITTLE_GROUP'">Молодша</option>
+                    <option class="text select_text" value="1" [selected]="group === 'BEGINNERS_GROUP'">Середня</option>
+                    <option class="text select_text" value="2" [selected]="group === 'OLDER_GROUP'">Старша</option>
+                </select> 
+            </div>
+            
+            <button type="submit" class="text">Додати</button>
+        </form>
+    </div>
+</div>
