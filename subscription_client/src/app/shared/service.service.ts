@@ -39,5 +39,14 @@ export class ServiceService {
   addSportsmen(sportsmanReq: AddNewSportsmen){
     return this.http.post(this.allLinks + "sportsmen/add", sportsmanReq)
   }
+  getTraining():Observable<any>{
+    return this.http.get<any>(this.allLinks + "training/get")
+  }
+  stopTraning():Observable<any>{
+    return this.http.get<any>(this.allLinks + "training/stop")
+  }
+  startTraning():Observable<any>{
+    return this.http.get<any>(this.allLinks + "training/start")
+  }
 
 }

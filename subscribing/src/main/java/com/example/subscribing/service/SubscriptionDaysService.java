@@ -6,5 +6,4 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 public interface SubscriptionDaysService {
     void performWeeklySubscription();
-    ResponseEntity<Response> stopExecution();
 }

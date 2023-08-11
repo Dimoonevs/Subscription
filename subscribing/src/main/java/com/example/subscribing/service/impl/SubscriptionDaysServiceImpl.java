@@ -1,12 +1,9 @@
 package com.example.subscribing.service.impl;
 
-import com.example.subscribing.domain.Response;
 import com.example.subscribing.dto.module.Sportsmen;
 import com.example.subscribing.dto.repository.SportsmenRepo;
 import com.example.subscribing.service.SubscriptionDaysService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -17,7 +14,7 @@ import java.util.List;
 @EnableScheduling
 public class SubscriptionDaysServiceImpl implements SubscriptionDaysService {
     private final SportsmenRepo sportsmenRepo;
-    private boolean stopExecution = false;
+    private static boolean  stopExecution = false;
 
     @Autowired
     public SubscriptionDaysServiceImpl(SportsmenRepo sportsmenRepo) {
@@ -43,10 +40,12 @@ public class SubscriptionDaysServiceImpl implements SubscriptionDaysService {
         }
     }
 
-    @Override
-    public ResponseEntity<Response> stopExecution() {
-        stopExecution = true;
-        Response response = new Response<>("OK");
-        return new ResponseEntity<>(response, HttpStatus.OK);
+
+    public static void setStopExecution(boolean stopExecution) {
+        SubscriptionDaysServiceImpl.stopExecution = stopExecution;
+    }
+
+    public static boolean isStopExecution() {
+        return stopExecution;
     }
 }

@@ -13,11 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class SportsmenController {
 
     private final SportsmenService sportsmenService;
-    private final SubscriptionDaysService service;
     @Autowired
-    public SportsmenController(SportsmenService sportsmenService, SubscriptionDaysService service) {
+    public SportsmenController(SportsmenService sportsmenService) {
         this.sportsmenService = sportsmenService;
-        this.service = service;
     }
 
     @PostMapping("/add")
@@ -33,10 +31,5 @@ public class SportsmenController {
     public ResponseEntity<Response> getSportsmenByID(@RequestHeader Long id){
         return sportsmenService.getSportsmenByID(id);
     }
-    @PostMapping("/freeze")
-    public ResponseEntity<Response> freeze(){
-        return service.stopExecution();
-    }
-
 
 }

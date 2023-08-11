@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserRepo } from '../../interfase/interface';
 import { ServiceService } from '../../service.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,12 +11,16 @@ import { Router } from '@angular/router';
 export class AdminComponent {
   sportsmens: UserRepo | any;
   selectedOption: number = 1; 
+  trainingIsFreeze: boolean | any; 
 
   constructor(private service: ServiceService, private router: Router){}
 
   ngOnInit(): void {
     this.service.getAllSportsmenOfGrope(0).subscribe((any:UserRepo) =>{
       this.sportsmens = any;
+    })
+    this.service.getTraining().subscribe((any) => {
+      this.trainingIsFreeze = any.data
     })
   }
   @ViewChild('mySelect') mySelect!: ElementRef;
@@ -46,6 +49,16 @@ export class AdminComponent {
 
   routeToAddForm(){
     this.router.navigate(["/add"])
+  }
+  stopTrainig(){
+    this.service.stopTraning().subscribe(()=>{
+      this.trainingIsFreeze = true;
+    })
+  }
+  startTraining(){
+    this.service.startTraning().subscribe(()=>{
+      this.trainingIsFreeze = false;
+    })
   }
 
 }

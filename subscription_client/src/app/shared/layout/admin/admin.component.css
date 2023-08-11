@@ -11,9 +11,6 @@
 table{
     border-radius: 14%;
 }
-.text_color{
-    color: #333333;
-}
 .table{
     margin-top: 50px;
 }
@@ -29,6 +26,9 @@ table tbody td{
 }
 .table td{
     padding: 25px;
+}
+.text_color{
+    color: #333333;
 }
 .wrapper {
     min-height: 75vh;
@@ -93,6 +93,20 @@ button{
     max-width: 250px;
     height: 40px;
     margin-top: 0;
+}
+.buttons{
+    display: flex;
+}
+.button_freez{
+    background-color: #abeaf0;
+    margin-right: 15px;
+}
+.button_refreez{
+    margin-right: 15px;
+    background-color: #ee9898;
+}
+.display_none{
+    display: none;
 }
 
 @media(max-width: 595px){
