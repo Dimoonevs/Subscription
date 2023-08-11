@@ -1,0 +1,43 @@
+version: '3.1'
+
+services:
+  db_mysql:
+    container_name: db_mysql
+    image: mysql
+    ports:
+      - "3311:3306"
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 12dima22
+      MYSQL_ROOT_PASSWORD: 2Dima001!
+    volumes:
+      - /var/lib/mysqld:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: ./subscription_client
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    networks:
+      - mynetwork
+
+  backend:
+    build:
+      context: ./subscribing
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      MYSQL_HOST: db_mysql
+      MYSQL_PORT: '3306'
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

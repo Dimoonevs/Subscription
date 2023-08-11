@@ -1,0 +1,1 @@
+CREATE DATABASE subscribing_db;
