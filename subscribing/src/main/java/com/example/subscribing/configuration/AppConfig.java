@@ -24,7 +24,7 @@ import java.security.SecureRandom;
 public class AppConfig {
     private final CoachRepo coachRepo;
 
-    @Autowired
+//    @Autowired
     public AppConfig(CoachRepo coachRepo) {
         this.coachRepo = coachRepo;
     }

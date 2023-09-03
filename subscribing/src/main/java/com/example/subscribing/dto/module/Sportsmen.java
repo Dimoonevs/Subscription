@@ -3,6 +3,10 @@ package com.example.subscribing.dto.module;
 import com.example.subscribing.domain.Groups;
 import jakarta.persistence.*;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Date;
+
 @Entity
 public class Sportsmen {
     @Id
@@ -18,10 +22,9 @@ public class Sportsmen {
     public Sportsmen() {
     }
 
-    public Sportsmen(String name,Groups group, String lastName, Long numberWorkouts) {
+    public Sportsmen(String name,Groups group, String lastName) {
         this.name = name;
         this.lastName = lastName;
-        this.numberWorkouts = numberWorkouts;
         this.group = group;
     }
 
@@ -59,5 +62,22 @@ public class Sportsmen {
 
     public void setNumberWorkouts(Long numberWorkouts) {
         this.numberWorkouts = numberWorkouts;
+    }
+
+    public Long setNumberWorkoutsCantingDayTraining() {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate endDate = currentDate.plusMonths(1);
+        Long counting = 0l;
+//        System.out.println(currentDate + " " + currentDate.isBefore(endDate));
+
+        while (currentDate.isBefore(endDate)){
+            if (currentDate.getDayOfWeek() == DayOfWeek.MONDAY ||
+                    currentDate.getDayOfWeek() == DayOfWeek.WEDNESDAY ||
+                    currentDate.getDayOfWeek() == DayOfWeek.SATURDAY){
+                counting++;
+            }
+            currentDate = currentDate.plusDays(1);
+        }
+        return counting;
     }
 }

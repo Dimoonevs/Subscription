@@ -28,7 +28,9 @@ public class SportsmenServiceImpl implements SportsmenService {
         if (sportsmenRepo.existsByNameAndLastName(sportsmenReq.getName(),sportsmenReq.getLastName())){
             throw new CommonException(Code.SPORTSMEN_IS_EXIST, "Спортсмен уже заведен в базу", HttpStatus.BAD_REQUEST);
         }
-        Sportsmen sportsmen = new Sportsmen(sportsmenReq.getName(), Groups.values()[sportsmenReq.getGroup()], sportsmenReq.getLastName(), sportsmenReq.getNumberWorkouts());
+        Sportsmen sportsmen = new Sportsmen(sportsmenReq.getName(), Groups.values()[sportsmenReq.getGroup()], sportsmenReq.getLastName());
+        Long numberOfWorkOuts = sportsmen.setNumberWorkoutsCantingDayTraining();
+        sportsmen.setNumberWorkouts(numberOfWorkOuts);
 
         sportsmenRepo.save(sportsmen);
         Response response = new Response("Спортсмен удачно добавлен в базу");

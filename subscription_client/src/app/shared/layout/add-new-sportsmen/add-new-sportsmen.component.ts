@@ -12,7 +12,7 @@ import { ServiceService } from '../../service.service';
 export class AddNewSportsmenComponent {
   formAdd: FormGroup | any
   group = "LITTLE_GROUP"
-  number= 12
+  number= null;
 
   constructor(private fb: FormBuilder, private service: ServiceService, private route: ActivatedRoute, private router:Router){this._createFormUpdate() }
  
