@@ -6,9 +6,9 @@ public class SportsmenReq {
     private String name;
     private String lastName;
     private Long numberWorkouts;
-    private int group;
+    private Short group;
 
-    public SportsmenReq(String name, String lastName, Long numberWorkouts, int group) {
+    public SportsmenReq(String name, String lastName, Long numberWorkouts, Short group) {
         this.name = name;
         this.lastName = lastName;
         this.numberWorkouts = numberWorkouts;
@@ -39,11 +39,11 @@ public class SportsmenReq {
         this.numberWorkouts = numberWorkouts;
     }
 
-    public int getGroup() {
+    public Short getGroup() {
         return group;
     }
 
-    public void setGroup(int group) {
+    public void setGroup(Short group) {
         this.group = group;
     }
 }

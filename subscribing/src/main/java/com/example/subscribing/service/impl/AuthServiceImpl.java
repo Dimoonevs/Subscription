@@ -65,6 +65,9 @@ public class AuthServiceImpl implements AuthService {
     @PostConstruct
     public void saveCoach() {
         Coach coach = new Coach(loginCoach, passwordEncoder.encode(passwordCoach));
-        coachRepo.save(coach);
+
+        if (!coachRepo.existsByLogin(coach.getLogin())){
+            coachRepo.save(coach);
+        }
     }
 }

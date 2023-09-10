@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface CoachRepo extends JpaRepository<Coach, Long> {
     Optional<Coach> findByLogin(String login);
+    boolean existsByLogin(String login);
 }

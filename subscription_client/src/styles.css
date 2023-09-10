@@ -73,6 +73,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+tr{
+  border: 1px solid #333333;
+}
+td{
+  border-left: 1px solid #333333;
+}
+thead th{
+  border-left: 1px solid #FFFF;
+}
+.fs_th{
+  border: none;
+}
 .text_log{
   font-family: 'Caveat';
   font-weight: 700;
@@ -153,10 +165,10 @@ button{
       padding: 111px 0;
   }
   .table th{
-    padding: 25px 0 !important;
+    padding: 15px 5px !important;
   }
   .table td{
-    padding: 25px 0 !important;
+    padding: 15px 5px !important;
   }
 }
 @media(max-width: 595px){

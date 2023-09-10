@@ -87,23 +87,35 @@ button{
 .container_top{
     display: flex;
     justify-content: space-between;
+}
+select{
     max-height: 40px;
 }
 .button_add{
-    max-width: 250px;
     height: 40px;
     margin-top: 0;
+    width: 100%;
+    align-self: flex-end;
 }
 .buttons{
     display: flex;
+    flex-direction: column;
+    /* max-width: 900px; */
+    /* width: 50%; */
+}
+.buttons_top{
+    display: flex;
+    margin-bottom: 15px;
 }
 .button_freez{
     background-color: #abeaf0;
     margin-right: 15px;
+    /* width: 250px; */
 }
 .button_refreez{
     margin-right: 15px;
     background-color: #ee9898;
+    /* width: 250px; */
 }
 .display_none{
     display: none;

@@ -3,8 +3,7 @@ export interface UserRepo{
         id:any,
         name:string,
         lastName:string,
-        numberWorkouts:any,
-        group:string
+        numberWorkouts:any
     }]
 }
 export interface GetSportsmenByIDResp{
@@ -36,4 +35,20 @@ export interface CouachReq{
 }
 export interface AuthResp{
     data : string
+}
+export interface GropeReq{
+    grope: string 
+}
+export enum Groups{
+    LITTLE_GROUP,
+    BEGINNERS_GROUP,
+    OLDER_GROUP
+}
+export interface GroupsFreezedUnfreezedTrainingResp{
+    data: {
+        trainingIsFreezeAll: boolean;
+        trainingIsFreezeLittle: boolean;
+        trainingIsFreezeBeginner: boolean;
+        trainingIsFreezeOlder: boolean;
+    }
 }

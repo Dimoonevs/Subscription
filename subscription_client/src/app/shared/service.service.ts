@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AddNewSportsmen, GetSportsmenByIDResp, UpdateSportsmanReq, UserRepo } from './interfase/interface';
+import { AddNewSportsmen, GetSportsmenByIDResp, GropeReq, GroupsFreezedUnfreezedTrainingResp, UpdateSportsmanReq, UserRepo } from './interfase/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -39,14 +39,11 @@ export class ServiceService {
   addSportsmen(sportsmanReq: AddNewSportsmen){
     return this.http.post(this.allLinks + "sportsmen/add", sportsmanReq)
   }
-  getTraining():Observable<any>{
-    return this.http.get<any>(this.allLinks + "training/get")
+  getTraining():Observable<GroupsFreezedUnfreezedTrainingResp>{
+    return this.http.get<GroupsFreezedUnfreezedTrainingResp>(this.allLinks + "training/get")
   }
-  stopTraning():Observable<any>{
-    return this.http.get<any>(this.allLinks + "training/stop")
-  }
-  startTraning():Observable<any>{
-    return this.http.get<any>(this.allLinks + "training/start")
+  toggleTraning(grope: GropeReq):Observable<any>{
+    return this.http.post<any>(this.allLinks + "training/toggle", grope)
   }
 
 }
